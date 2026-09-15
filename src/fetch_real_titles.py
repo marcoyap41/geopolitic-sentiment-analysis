@@ -63,8 +63,10 @@ HEADERS = {
 }
 
 
-def chunk_paths(num_chunks: int, chunk_id: int):
+def chunk_paths(num_chunks: int, chunk_id: int, sample: int = None):
     tag = f"chunk{chunk_id}of{num_chunks}"
+    if sample:
+        tag += f".sample{sample}"
     checkpoint = OUTPUT_DIR / f"fetch_real_titles.{tag}.checkpoint.csv"
     output = OUTPUT_DIR / f"cnbc_real_titles.{tag}.csv"
     return checkpoint, output
@@ -121,8 +123,14 @@ def run_chunk(args):
     log.info("Total baris di file input: %d", len(df))
 
     my_chunk = get_chunk(df, args.num_chunks, args.chunk_id)
-    checkpoint_path, output_path = chunk_paths(args.num_chunks, args.chunk_id)
     log.info("Chunk %d/%d -> %d baris jadi tanggung jawab laptop ini", args.chunk_id, args.num_chunks, len(my_chunk))
+
+    if args.sample:
+        n = min(args.sample, len(my_chunk))
+        my_chunk = my_chunk.sample(n=n, random_state=42).reset_index(drop=True)
+        log.info("Mode SAMPLE aktif: ambil %d baris acak dari chunk ini (buat tes dulu)", n)
+
+    checkpoint_path, output_path = chunk_paths(args.num_chunks, args.chunk_id, args.sample)
 
     checkpoint = load_checkpoint(checkpoint_path) if args.resume else pd.DataFrame(columns=["url", "title_real"])
     done_map = dict(zip(checkpoint["url"], checkpoint["title_real"]))
@@ -189,6 +197,7 @@ def main():
     parser.add_argument("--num-chunks", type=int, default=1, help="Total jumlah laptop/bagian (default: 1, tidak dibagi)")
     parser.add_argument("--chunk-id", type=int, default=0, help="Nomor bagian untuk laptop ini, mulai dari 0 (0, 1, 2, 3 untuk 4 laptop)")
     parser.add_argument("--merge", action="store_true", help="Mode gabung: satukan semua hasil chunk jadi 1 file (jalankan setelah semua laptop selesai)")
+    parser.add_argument("--sample", type=int, default=None, help="Mode tes: cuma ambil N baris acak dari chunk ini (misal 1000), tidak proses semua dulu")
     args = parser.parse_args()
 
     if args.chunk_id >= args.num_chunks:
