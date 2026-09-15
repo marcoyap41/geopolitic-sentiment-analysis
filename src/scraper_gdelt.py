@@ -1,4 +1,4 @@
-﻿"""
+"""
 =====================================================================
 scraper_gdelt.py  -  Scraper Berita Geopolitik via GDELT API
 =====================================================================
@@ -38,8 +38,9 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 START_DATE = "2021-09-01"
 END_DATE   = "2026-09-01"
 
-# Minimum delay per GDELT rate limit policy (5 detik)
-GDELT_MIN_DELAY = 6.0
+# Delay antar request - 12 detik lebih aman dari rate limit GDELT
+# (GDELT policy: 1 req/5 detik, 12 detik memberi buffer ekstra)
+GDELT_MIN_DELAY = 12.0
 
 GEOPOLITICAL_KEYWORDS = [
     "dollar geopolitics",
@@ -72,10 +73,21 @@ HEADERS = {
 }
 
 
+# Pelacak berapa kali berturut-turut kena 429 (global state)
+_consecutive_failures = 0
+
+
 def query_gdelt_articles(keyword, startdatetime, enddatetime,
-                         max_records=250, retries=3):
+                         max_records=250, retries=5):
     """
-    Memanggil GDELT DOC API dengan retry dan rate limiting.
+    Memanggil GDELT DOC API dengan retry cerdas dan exponential backoff.
+
+    Strategi backoff saat 429:
+      attempt 1 -> tunggu 60 detik
+      attempt 2 -> tunggu 120 detik
+      attempt 3 -> tunggu 180 detik
+      attempt 4 -> tunggu 240 detik
+      attempt 5 -> tunggu 300 detik
 
     Parameter
     ---------
@@ -83,8 +95,10 @@ def query_gdelt_articles(keyword, startdatetime, enddatetime,
     startdatetime : Format YYYYMMDDHHMMSS
     enddatetime   : Format YYYYMMDDHHMMSS
     max_records   : Maksimum artikel per request (GDELT max=250)
-    retries       : Jumlah percobaan ulang jika gagal
+    retries       : Jumlah percobaan ulang jika gagal (default: 5)
     """
+    global _consecutive_failures
+
     params = {
         "query"         : keyword,
         "mode"          : "artlist",
@@ -96,31 +110,42 @@ def query_gdelt_articles(keyword, startdatetime, enddatetime,
         "sort"          : "DateDesc",
     }
 
+    # Cooldown global jika sudah sering gagal berturut-turut
+    if _consecutive_failures >= 3:
+        cooldown = 120
+        log.warning(f"  [{_consecutive_failures}x gagal berturut-turut] Cool down {cooldown}s...")
+        time.sleep(cooldown)
+        _consecutive_failures = 0
+
     for attempt in range(1, retries + 1):
         try:
             resp = requests.get(BASE_URL, params=params,
                                 headers=HEADERS, timeout=40)
 
             if resp.status_code == 429:
-                wait = GDELT_MIN_DELAY * (attempt * 2)
-                log.warning(f"  Rate limited! Menunggu {wait:.0f} detik...")
+                # Exponential backoff: 60, 120, 180, 240, 300 detik
+                wait = min(60 * attempt, 300)
+                log.warning(f"  Rate limited! Attempt {attempt}/{retries} - tunggu {wait}s...")
+                _consecutive_failures += 1
                 time.sleep(wait)
                 continue
 
             resp.raise_for_status()
             data = resp.json()
             articles = data.get("articles", [])
+            _consecutive_failures = 0  # reset saat berhasil
             log.info(f"  '{keyword[:35]}' [{startdatetime[:8]}-{enddatetime[:8]}]: {len(articles)} artikel")
             return articles
 
         except requests.Timeout:
-            log.warning(f"  Timeout (attempt {attempt}/{retries}), retry...")
-            time.sleep(GDELT_MIN_DELAY)
+            log.warning(f"  Timeout (attempt {attempt}/{retries}), retry dalam 30s...")
+            time.sleep(30)
         except requests.RequestException as e:
             log.error(f"  Error (attempt {attempt}/{retries}): {e}")
             time.sleep(GDELT_MIN_DELAY)
 
-    log.error(f"  Gagal setelah {retries} percobaan untuk keyword '{keyword}'")
+    _consecutive_failures += 1
+    log.error(f"  Gagal setelah {retries} percobaan - chunk ini dilewati")
     return []
 
 
