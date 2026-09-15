@@ -169,10 +169,10 @@ def run_chunk(args):
 
 
 def run_merge(args):
-    """Gabungkan semua file cnbc_real_titles.chunk*of{num_chunks}.csv jadi satu."""
+    """Gabungkan semua file cnbc_real_titles.chunk*of{num_chunks}[.sampleN].csv jadi satu."""
     frames = []
     for i in range(args.num_chunks):
-        _, output_path = chunk_paths(args.num_chunks, i)
+        _, output_path = chunk_paths(args.num_chunks, i, args.sample)
         if not output_path.exists():
             log.warning("Chunk %d belum ada hasilnya (%s) -- pastikan semua laptop sudah selesai.", i, output_path)
             continue
@@ -184,7 +184,8 @@ def run_merge(args):
 
     combined = pd.concat(frames, ignore_index=True).drop_duplicates(subset=["url"])
     ts = time.strftime("%Y%m%d_%H%M%S")
-    final_path = OUTPUT_DIR / f"cnbc_real_titles_merged_{ts}.csv"
+    tag = f"sample{args.sample}_" if args.sample else ""
+    final_path = OUTPUT_DIR / f"cnbc_real_titles_merged_{tag}{ts}.csv"
     combined.to_csv(final_path, index=False, encoding="utf-8-sig")
     log.info("Gabungan selesai: %d baris -> %s", len(combined), final_path)
 
