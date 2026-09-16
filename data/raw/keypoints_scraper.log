@@ -1,0 +1,331 @@
+2026-09-16 03:04:30,666 [INFO] Membaca URL dari: news_geopolitik_clean.csv
+2026-09-16 03:04:30,799 [INFO] Total URL unik: 41600
+2026-09-16 03:04:30,802 [INFO] URL yang perlu diproses: 41600  (sudah selesai: 0)
+2026-09-16 03:04:30,802 [INFO] Mode test: dibatasi 20 URL
+2026-09-16 03:04:30,802 [INFO] Mulai scraping 20 URL dengan 5 workers...
+2026-09-16 03:04:30,802 [INFO] Estimasi waktu: ~0 menit (asumsi ~0.8 detik/artikel, 5 workers)
+2026-09-16 03:04:44,084 [INFO]   Checkpoint disimpan: 20 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:04:44,610 [INFO] 
+=== HASIL SCRAPING ===
+2026-09-16 03:04:44,610 [INFO] Total diproses : 20
+2026-09-16 03:04:44,626 [INFO]   ok                  : 13 (65.0%)
+2026-09-16 03:04:44,626 [INFO]   no_keypoints        : 7 (35.0%)
+2026-09-16 03:04:44,646 [INFO] 
+Artikel DENGAN keypoints: 13
+2026-09-16 03:04:44,650 [INFO] Rata-rata jumlah keypoints: 3.0
+2026-09-16 03:04:44,651 [INFO] Sample keypoints:
+2026-09-16 03:04:44,654 [INFO]   [opec-raises-2022-oil-demand-growth-forecast.html]
+2026-09-16 03:04:44,654 [INFO]     • The Organization of the Petroleum Exporting Countries and allies led by Russia, a group known as OPE
+2026-09-16 03:04:44,655 [INFO]     • OPEC+ expects global oil demand to grow by 5.95 million bpd in 2021 after a record drop of about 9 m
+2026-09-16 03:04:44,655 [INFO]   [opec-seen-sticking-to-policy-despite-higher-oil-de]
+2026-09-16 03:04:44,655 [INFO]     • OPEC and its allies will likely stick to their existing policy of gradual oil output increases, four
+2026-09-16 03:04:44,656 [INFO]     • The group revised up its 2022 demand outlook and still faces U.S. pressure to raise production more 
+2026-09-16 03:04:44,656 [INFO]   [as-stimulus-checks-end-job-growth-to-power-economy]
+2026-09-16 03:04:44,657 [INFO]     • The higher wages employers have had to pay to stay competitive in a tight labor market could lead to
+2026-09-16 03:04:44,657 [INFO]     • As government stimulus payments run out, consumer spending will be relying on the labor market and j
+2026-09-16 03:04:44,666 [INFO] 
+Output disimpan: D:\UGM\smt_5\NLP\geopolitic-sentiment-analysis\data\raw\cnbc_keypoints.csv
+2026-09-16 03:07:01,216 [INFO] Membaca URL dari: news_geopolitik_clean.csv
+2026-09-16 03:07:01,340 [INFO] Total URL unik: 41600
+2026-09-16 03:07:01,370 [INFO] Checkpoint ditemukan: 20 URL sudah diproses
+2026-09-16 03:07:01,373 [INFO] URL yang perlu diproses: 41580  (sudah selesai: 20)
+2026-09-16 03:07:01,373 [INFO] Mulai scraping 41580 URL dengan 10 workers...
+2026-09-16 03:07:01,373 [INFO] Estimasi waktu: ~55 menit (asumsi ~0.8 detik/artikel, 10 workers)
+2026-09-16 03:08:04,266 [INFO]   Checkpoint disimpan: 320 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:08:04,266 [INFO] Progress: 300/41580 selesai | 145 dengan keypoints (48.3%)
+2026-09-16 03:09:00,969 [INFO]   Checkpoint disimpan: 620 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:09:00,970 [INFO] Progress: 600/41580 selesai | 282 dengan keypoints (47.0%)
+2026-09-16 03:09:57,057 [INFO]   Checkpoint disimpan: 920 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:09:57,057 [INFO] Progress: 900/41580 selesai | 437 dengan keypoints (48.6%)
+2026-09-16 03:11:10,337 [INFO]   Checkpoint disimpan: 1220 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:11:10,337 [INFO] Progress: 1200/41580 selesai | 589 dengan keypoints (49.1%)
+2026-09-16 03:12:10,499 [INFO]   Checkpoint disimpan: 1520 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:12:10,499 [INFO] Progress: 1500/41580 selesai | 743 dengan keypoints (49.5%)
+2026-09-16 03:13:09,096 [INFO]   Checkpoint disimpan: 1820 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:13:09,096 [INFO] Progress: 1800/41580 selesai | 889 dengan keypoints (49.4%)
+2026-09-16 03:14:08,636 [INFO]   Checkpoint disimpan: 2120 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:14:08,636 [INFO] Progress: 2100/41580 selesai | 1052 dengan keypoints (50.1%)
+2026-09-16 03:15:08,121 [INFO]   Checkpoint disimpan: 2420 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:15:08,122 [INFO] Progress: 2400/41580 selesai | 1225 dengan keypoints (51.0%)
+2026-09-16 03:16:04,694 [INFO]   Checkpoint disimpan: 2720 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:16:04,694 [INFO] Progress: 2700/41580 selesai | 1378 dengan keypoints (51.0%)
+2026-09-16 03:17:01,280 [INFO]   Checkpoint disimpan: 3020 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:17:01,280 [INFO] Progress: 3000/41580 selesai | 1524 dengan keypoints (50.8%)
+2026-09-16 03:17:57,960 [INFO]   Checkpoint disimpan: 3320 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:17:57,961 [INFO] Progress: 3300/41580 selesai | 1679 dengan keypoints (50.9%)
+2026-09-16 03:18:54,572 [INFO]   Checkpoint disimpan: 3620 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:18:54,573 [INFO] Progress: 3600/41580 selesai | 1834 dengan keypoints (50.9%)
+2026-09-16 03:19:51,733 [INFO]   Checkpoint disimpan: 3920 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:19:51,734 [INFO] Progress: 3900/41580 selesai | 1982 dengan keypoints (50.8%)
+2026-09-16 03:20:53,748 [INFO]   Checkpoint disimpan: 4220 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:20:53,749 [INFO] Progress: 4200/41580 selesai | 2124 dengan keypoints (50.6%)
+2026-09-16 03:22:05,703 [INFO]   Checkpoint disimpan: 4520 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:22:05,704 [INFO] Progress: 4500/41580 selesai | 2294 dengan keypoints (51.0%)
+2026-09-16 03:23:11,871 [INFO]   Checkpoint disimpan: 4820 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:23:11,872 [INFO] Progress: 4800/41580 selesai | 2467 dengan keypoints (51.4%)
+2026-09-16 03:24:12,247 [INFO]   Checkpoint disimpan: 5120 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:24:12,248 [INFO] Progress: 5100/41580 selesai | 2626 dengan keypoints (51.5%)
+2026-09-16 03:25:06,787 [INFO]   Checkpoint disimpan: 5420 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:25:06,788 [INFO] Progress: 5400/41580 selesai | 2786 dengan keypoints (51.6%)
+2026-09-16 03:26:07,641 [INFO]   Checkpoint disimpan: 5720 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:26:07,642 [INFO] Progress: 5700/41580 selesai | 2946 dengan keypoints (51.7%)
+2026-09-16 03:27:13,155 [INFO]   Checkpoint disimpan: 6020 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:27:13,155 [INFO] Progress: 6000/41580 selesai | 3100 dengan keypoints (51.7%)
+2026-09-16 03:28:19,386 [INFO]   Checkpoint disimpan: 6320 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:28:19,387 [INFO] Progress: 6300/41580 selesai | 3250 dengan keypoints (51.6%)
+2026-09-16 03:29:36,545 [INFO]   Checkpoint disimpan: 6620 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:29:36,546 [INFO] Progress: 6600/41580 selesai | 3407 dengan keypoints (51.6%)
+2026-09-16 03:30:49,157 [INFO]   Checkpoint disimpan: 6920 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:30:49,158 [INFO] Progress: 6900/41580 selesai | 3564 dengan keypoints (51.7%)
+2026-09-16 03:31:53,185 [INFO]   Checkpoint disimpan: 7220 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:31:53,186 [INFO] Progress: 7200/41580 selesai | 3725 dengan keypoints (51.7%)
+2026-09-16 03:33:01,939 [INFO]   Checkpoint disimpan: 7520 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:33:01,939 [INFO] Progress: 7500/41580 selesai | 3872 dengan keypoints (51.6%)
+2026-09-16 03:33:59,526 [INFO]   Checkpoint disimpan: 7820 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:33:59,527 [INFO] Progress: 7800/41580 selesai | 4030 dengan keypoints (51.7%)
+2026-09-16 03:34:55,377 [INFO]   Checkpoint disimpan: 8120 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:34:55,378 [INFO] Progress: 8100/41580 selesai | 4194 dengan keypoints (51.8%)
+2026-09-16 03:35:56,242 [INFO]   Checkpoint disimpan: 8420 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:35:56,243 [INFO] Progress: 8400/41580 selesai | 4335 dengan keypoints (51.6%)
+2026-09-16 03:37:00,113 [INFO]   Checkpoint disimpan: 8720 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:37:00,114 [INFO] Progress: 8700/41580 selesai | 4479 dengan keypoints (51.5%)
+2026-09-16 03:37:57,767 [INFO]   Checkpoint disimpan: 9020 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:37:57,768 [INFO] Progress: 9000/41580 selesai | 4605 dengan keypoints (51.2%)
+2026-09-16 03:38:54,901 [INFO]   Checkpoint disimpan: 9320 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:38:54,902 [INFO] Progress: 9300/41580 selesai | 4757 dengan keypoints (51.2%)
+2026-09-16 03:39:51,901 [INFO]   Checkpoint disimpan: 9620 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:39:51,901 [INFO] Progress: 9600/41580 selesai | 4919 dengan keypoints (51.2%)
+2026-09-16 03:41:04,704 [INFO]   Checkpoint disimpan: 9920 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:41:04,704 [INFO] Progress: 9900/41580 selesai | 5057 dengan keypoints (51.1%)
+2026-09-16 03:42:43,650 [INFO]   Checkpoint disimpan: 10220 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:42:43,651 [INFO] Progress: 10200/41580 selesai | 5197 dengan keypoints (51.0%)
+2026-09-16 03:43:56,843 [INFO]   Checkpoint disimpan: 10520 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:43:56,844 [INFO] Progress: 10500/41580 selesai | 5342 dengan keypoints (50.9%)
+2026-09-16 03:45:14,352 [INFO]   Checkpoint disimpan: 10820 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:45:14,353 [INFO] Progress: 10800/41580 selesai | 5473 dengan keypoints (50.7%)
+2026-09-16 03:46:33,933 [INFO]   Checkpoint disimpan: 11120 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:46:33,933 [INFO] Progress: 11100/41580 selesai | 5609 dengan keypoints (50.5%)
+2026-09-16 03:47:57,063 [INFO]   Checkpoint disimpan: 11420 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:47:57,064 [INFO] Progress: 11400/41580 selesai | 5758 dengan keypoints (50.5%)
+2026-09-16 03:49:03,563 [INFO]   Checkpoint disimpan: 11720 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:49:03,564 [INFO] Progress: 11700/41580 selesai | 5907 dengan keypoints (50.5%)
+2026-09-16 03:50:07,931 [INFO]   Checkpoint disimpan: 12020 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:50:07,933 [INFO] Progress: 12000/41580 selesai | 6063 dengan keypoints (50.5%)
+2026-09-16 03:51:06,469 [INFO]   Checkpoint disimpan: 12320 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:51:06,470 [INFO] Progress: 12300/41580 selesai | 6213 dengan keypoints (50.5%)
+2026-09-16 03:52:07,847 [INFO]   Checkpoint disimpan: 12620 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:52:07,848 [INFO] Progress: 12600/41580 selesai | 6368 dengan keypoints (50.5%)
+2026-09-16 03:53:19,414 [INFO]   Checkpoint disimpan: 12920 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:53:19,415 [INFO] Progress: 12900/41580 selesai | 6522 dengan keypoints (50.6%)
+2026-09-16 03:54:21,719 [INFO]   Checkpoint disimpan: 13220 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:54:21,720 [INFO] Progress: 13200/41580 selesai | 6672 dengan keypoints (50.5%)
+2026-09-16 03:55:23,840 [INFO]   Checkpoint disimpan: 13520 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:55:23,841 [INFO] Progress: 13500/41580 selesai | 6824 dengan keypoints (50.5%)
+2026-09-16 03:56:20,805 [INFO]   Checkpoint disimpan: 13820 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:56:20,806 [INFO] Progress: 13800/41580 selesai | 6987 dengan keypoints (50.6%)
+2026-09-16 03:57:19,906 [INFO]   Checkpoint disimpan: 14120 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:57:19,907 [INFO] Progress: 14100/41580 selesai | 7146 dengan keypoints (50.7%)
+2026-09-16 03:58:16,674 [INFO]   Checkpoint disimpan: 14420 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:58:16,676 [INFO] Progress: 14400/41580 selesai | 7284 dengan keypoints (50.6%)
+2026-09-16 03:59:14,712 [INFO]   Checkpoint disimpan: 14720 baris -> keypoints_checkpoint.parquet
+2026-09-16 03:59:14,713 [INFO] Progress: 14700/41580 selesai | 7441 dengan keypoints (50.6%)
+2026-09-16 04:00:27,689 [INFO]   Checkpoint disimpan: 15020 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:00:27,690 [INFO] Progress: 15000/41580 selesai | 7605 dengan keypoints (50.7%)
+2026-09-16 04:01:35,870 [INFO]   Checkpoint disimpan: 15320 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:01:35,872 [INFO] Progress: 15300/41580 selesai | 7767 dengan keypoints (50.8%)
+2026-09-16 04:02:32,732 [INFO]   Checkpoint disimpan: 15620 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:02:32,733 [INFO] Progress: 15600/41580 selesai | 7943 dengan keypoints (50.9%)
+2026-09-16 04:03:30,641 [INFO]   Checkpoint disimpan: 15920 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:03:30,643 [INFO] Progress: 15900/41580 selesai | 8112 dengan keypoints (51.0%)
+2026-09-16 04:04:26,908 [INFO]   Checkpoint disimpan: 16220 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:04:26,910 [INFO] Progress: 16200/41580 selesai | 8278 dengan keypoints (51.1%)
+2026-09-16 04:05:25,822 [INFO]   Checkpoint disimpan: 16520 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:05:25,824 [INFO] Progress: 16500/41580 selesai | 8425 dengan keypoints (51.1%)
+2026-09-16 04:06:25,889 [INFO]   Checkpoint disimpan: 16820 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:06:25,890 [INFO] Progress: 16800/41580 selesai | 8571 dengan keypoints (51.0%)
+2026-09-16 04:07:23,023 [INFO]   Checkpoint disimpan: 17120 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:07:23,025 [INFO] Progress: 17100/41580 selesai | 8722 dengan keypoints (51.0%)
+2026-09-16 04:08:21,035 [INFO]   Checkpoint disimpan: 17420 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:08:21,036 [INFO] Progress: 17400/41580 selesai | 8870 dengan keypoints (51.0%)
+2026-09-16 04:09:20,972 [INFO]   Checkpoint disimpan: 17720 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:09:20,974 [INFO] Progress: 17700/41580 selesai | 9020 dengan keypoints (51.0%)
+2026-09-16 04:10:22,727 [INFO]   Checkpoint disimpan: 18020 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:10:22,729 [INFO] Progress: 18000/41580 selesai | 9172 dengan keypoints (51.0%)
+2026-09-16 04:11:20,389 [INFO]   Checkpoint disimpan: 18320 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:11:20,390 [INFO] Progress: 18300/41580 selesai | 9329 dengan keypoints (51.0%)
+2026-09-16 04:12:16,813 [INFO]   Checkpoint disimpan: 18620 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:12:16,814 [INFO] Progress: 18600/41580 selesai | 9482 dengan keypoints (51.0%)
+2026-09-16 04:13:25,945 [INFO]   Checkpoint disimpan: 18920 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:13:25,946 [INFO] Progress: 18900/41580 selesai | 9632 dengan keypoints (51.0%)
+2026-09-16 04:14:23,475 [INFO]   Checkpoint disimpan: 19220 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:14:23,476 [INFO] Progress: 19200/41580 selesai | 9791 dengan keypoints (51.0%)
+2026-09-16 04:15:21,161 [INFO]   Checkpoint disimpan: 19520 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:15:21,162 [INFO] Progress: 19500/41580 selesai | 9928 dengan keypoints (50.9%)
+2026-09-16 04:16:20,493 [INFO]   Checkpoint disimpan: 19820 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:16:20,496 [INFO] Progress: 19800/41580 selesai | 10081 dengan keypoints (50.9%)
+2026-09-16 04:17:16,505 [INFO]   Checkpoint disimpan: 20120 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:17:16,506 [INFO] Progress: 20100/41580 selesai | 10243 dengan keypoints (51.0%)
+2026-09-16 04:18:15,935 [INFO]   Checkpoint disimpan: 20420 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:18:15,937 [INFO] Progress: 20400/41580 selesai | 10384 dengan keypoints (50.9%)
+2026-09-16 04:19:18,575 [INFO]   Checkpoint disimpan: 20720 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:19:18,576 [INFO] Progress: 20700/41580 selesai | 10558 dengan keypoints (51.0%)
+2026-09-16 04:20:14,143 [INFO]   Checkpoint disimpan: 21020 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:20:14,145 [INFO] Progress: 21000/41580 selesai | 10717 dengan keypoints (51.0%)
+2026-09-16 04:21:27,036 [INFO]   Checkpoint disimpan: 21320 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:21:27,037 [INFO] Progress: 21300/41580 selesai | 10884 dengan keypoints (51.1%)
+2026-09-16 04:22:23,510 [INFO]   Checkpoint disimpan: 21620 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:22:23,512 [INFO] Progress: 21600/41580 selesai | 11041 dengan keypoints (51.1%)
+2026-09-16 04:23:26,525 [INFO]   Checkpoint disimpan: 21920 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:23:26,527 [INFO] Progress: 21900/41580 selesai | 11204 dengan keypoints (51.2%)
+2026-09-16 04:24:30,917 [INFO]   Checkpoint disimpan: 22220 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:24:30,919 [INFO] Progress: 22200/41580 selesai | 11362 dengan keypoints (51.2%)
+2026-09-16 04:25:35,533 [INFO]   Checkpoint disimpan: 22520 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:25:35,534 [INFO] Progress: 22500/41580 selesai | 11518 dengan keypoints (51.2%)
+2026-09-16 04:26:37,441 [INFO]   Checkpoint disimpan: 22820 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:26:37,443 [INFO] Progress: 22800/41580 selesai | 11667 dengan keypoints (51.2%)
+2026-09-16 04:27:40,613 [INFO]   Checkpoint disimpan: 23120 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:27:40,615 [INFO] Progress: 23100/41580 selesai | 11804 dengan keypoints (51.1%)
+2026-09-16 04:28:46,653 [INFO]   Checkpoint disimpan: 23420 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:28:46,654 [INFO] Progress: 23400/41580 selesai | 11972 dengan keypoints (51.2%)
+2026-09-16 04:29:44,425 [INFO]   Checkpoint disimpan: 23720 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:29:44,426 [INFO] Progress: 23700/41580 selesai | 12124 dengan keypoints (51.2%)
+2026-09-16 04:30:54,006 [INFO]   Checkpoint disimpan: 24020 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:30:54,008 [INFO] Progress: 24000/41580 selesai | 12271 dengan keypoints (51.1%)
+2026-09-16 04:31:50,135 [INFO]   Checkpoint disimpan: 24320 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:31:50,137 [INFO] Progress: 24300/41580 selesai | 12425 dengan keypoints (51.1%)
+2026-09-16 04:32:57,559 [INFO]   Checkpoint disimpan: 24620 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:32:57,560 [INFO] Progress: 24600/41580 selesai | 12568 dengan keypoints (51.1%)
+2026-09-16 04:34:02,046 [INFO]   Checkpoint disimpan: 24920 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:34:02,048 [INFO] Progress: 24900/41580 selesai | 12722 dengan keypoints (51.1%)
+2026-09-16 04:34:58,959 [INFO]   Checkpoint disimpan: 25220 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:34:58,960 [INFO] Progress: 25200/41580 selesai | 12869 dengan keypoints (51.1%)
+2026-09-16 04:36:06,458 [INFO]   Checkpoint disimpan: 25520 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:36:06,460 [INFO] Progress: 25500/41580 selesai | 13020 dengan keypoints (51.1%)
+2026-09-16 04:37:05,254 [INFO]   Checkpoint disimpan: 25820 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:37:05,256 [INFO] Progress: 25800/41580 selesai | 13172 dengan keypoints (51.1%)
+2026-09-16 04:38:01,956 [INFO]   Checkpoint disimpan: 26120 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:38:01,958 [INFO] Progress: 26100/41580 selesai | 13319 dengan keypoints (51.0%)
+2026-09-16 04:38:58,303 [INFO]   Checkpoint disimpan: 26420 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:38:58,305 [INFO] Progress: 26400/41580 selesai | 13470 dengan keypoints (51.0%)
+2026-09-16 04:40:02,579 [INFO]   Checkpoint disimpan: 26720 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:40:02,581 [INFO] Progress: 26700/41580 selesai | 13636 dengan keypoints (51.1%)
+2026-09-16 04:41:23,985 [INFO]   Checkpoint disimpan: 27020 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:41:23,987 [INFO] Progress: 27000/41580 selesai | 13797 dengan keypoints (51.1%)
+2026-09-16 04:42:28,379 [INFO]   Checkpoint disimpan: 27320 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:42:28,381 [INFO] Progress: 27300/41580 selesai | 13952 dengan keypoints (51.1%)
+2026-09-16 04:43:25,822 [INFO]   Checkpoint disimpan: 27620 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:43:25,824 [INFO] Progress: 27600/41580 selesai | 14119 dengan keypoints (51.2%)
+2026-09-16 04:44:27,705 [INFO]   Checkpoint disimpan: 27920 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:44:27,706 [INFO] Progress: 27900/41580 selesai | 14289 dengan keypoints (51.2%)
+2026-09-16 04:45:39,065 [INFO]   Checkpoint disimpan: 28220 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:45:39,067 [INFO] Progress: 28200/41580 selesai | 14450 dengan keypoints (51.2%)
+2026-09-16 04:46:46,168 [INFO]   Checkpoint disimpan: 28520 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:46:46,170 [INFO] Progress: 28500/41580 selesai | 14620 dengan keypoints (51.3%)
+2026-09-16 04:48:01,570 [INFO]   Checkpoint disimpan: 28820 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:48:01,572 [INFO] Progress: 28800/41580 selesai | 14777 dengan keypoints (51.3%)
+2026-09-16 04:49:09,133 [INFO]   Checkpoint disimpan: 29120 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:49:09,135 [INFO] Progress: 29100/41580 selesai | 14932 dengan keypoints (51.3%)
+2026-09-16 04:50:09,366 [INFO]   Checkpoint disimpan: 29420 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:50:09,369 [INFO] Progress: 29400/41580 selesai | 15101 dengan keypoints (51.4%)
+2026-09-16 04:51:07,685 [INFO]   Checkpoint disimpan: 29720 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:51:07,687 [INFO] Progress: 29700/41580 selesai | 15265 dengan keypoints (51.4%)
+2026-09-16 04:52:06,136 [INFO]   Checkpoint disimpan: 30020 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:52:06,138 [INFO] Progress: 30000/41580 selesai | 15436 dengan keypoints (51.5%)
+2026-09-16 04:53:06,662 [INFO]   Checkpoint disimpan: 30320 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:53:06,664 [INFO] Progress: 30300/41580 selesai | 15596 dengan keypoints (51.5%)
+2026-09-16 04:54:08,339 [INFO]   Checkpoint disimpan: 30620 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:54:08,341 [INFO] Progress: 30600/41580 selesai | 15758 dengan keypoints (51.5%)
+2026-09-16 04:55:07,191 [INFO]   Checkpoint disimpan: 30920 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:55:07,192 [INFO] Progress: 30900/41580 selesai | 15916 dengan keypoints (51.5%)
+2026-09-16 04:56:09,800 [INFO]   Checkpoint disimpan: 31220 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:56:09,802 [INFO] Progress: 31200/41580 selesai | 16071 dengan keypoints (51.5%)
+2026-09-16 04:57:12,605 [INFO]   Checkpoint disimpan: 31520 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:57:12,607 [INFO] Progress: 31500/41580 selesai | 16217 dengan keypoints (51.5%)
+2026-09-16 04:58:09,939 [INFO]   Checkpoint disimpan: 31820 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:58:09,942 [INFO] Progress: 31800/41580 selesai | 16382 dengan keypoints (51.5%)
+2026-09-16 04:59:08,926 [INFO]   Checkpoint disimpan: 32120 baris -> keypoints_checkpoint.parquet
+2026-09-16 04:59:08,929 [INFO] Progress: 32100/41580 selesai | 16537 dengan keypoints (51.5%)
+2026-09-16 05:00:38,760 [INFO]   Checkpoint disimpan: 32420 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:00:38,762 [INFO] Progress: 32400/41580 selesai | 16699 dengan keypoints (51.5%)
+2026-09-16 05:01:59,907 [INFO]   Checkpoint disimpan: 32720 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:01:59,909 [INFO] Progress: 32700/41580 selesai | 16854 dengan keypoints (51.5%)
+2026-09-16 05:03:34,398 [INFO]   Checkpoint disimpan: 33020 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:03:34,400 [INFO] Progress: 33000/41580 selesai | 17012 dengan keypoints (51.6%)
+2026-09-16 05:04:48,897 [INFO]   Checkpoint disimpan: 33320 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:04:48,900 [INFO] Progress: 33300/41580 selesai | 17161 dengan keypoints (51.5%)
+2026-09-16 05:05:47,704 [INFO]   Checkpoint disimpan: 33620 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:05:47,707 [INFO] Progress: 33600/41580 selesai | 17322 dengan keypoints (51.6%)
+2026-09-16 05:06:49,129 [INFO]   Checkpoint disimpan: 33920 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:06:49,131 [INFO] Progress: 33900/41580 selesai | 17483 dengan keypoints (51.6%)
+2026-09-16 05:07:45,355 [INFO]   Checkpoint disimpan: 34220 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:07:45,358 [INFO] Progress: 34200/41580 selesai | 17635 dengan keypoints (51.6%)
+2026-09-16 05:08:42,887 [INFO]   Checkpoint disimpan: 34520 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:08:42,890 [INFO] Progress: 34500/41580 selesai | 17794 dengan keypoints (51.6%)
+2026-09-16 05:09:46,388 [INFO]   Checkpoint disimpan: 34820 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:09:46,391 [INFO] Progress: 34800/41580 selesai | 17935 dengan keypoints (51.5%)
+2026-09-16 05:10:44,684 [INFO]   Checkpoint disimpan: 35120 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:10:44,686 [INFO] Progress: 35100/41580 selesai | 18098 dengan keypoints (51.6%)
+2026-09-16 05:11:43,504 [INFO]   Checkpoint disimpan: 35420 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:11:43,506 [INFO] Progress: 35400/41580 selesai | 18265 dengan keypoints (51.6%)
+2026-09-16 05:12:42,493 [INFO]   Checkpoint disimpan: 35720 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:12:42,496 [INFO] Progress: 35700/41580 selesai | 18438 dengan keypoints (51.6%)
+2026-09-16 05:13:41,673 [INFO]   Checkpoint disimpan: 36020 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:13:41,676 [INFO] Progress: 36000/41580 selesai | 18597 dengan keypoints (51.7%)
+2026-09-16 05:14:46,218 [INFO]   Checkpoint disimpan: 36320 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:14:46,220 [INFO] Progress: 36300/41580 selesai | 18763 dengan keypoints (51.7%)
+2026-09-16 05:15:47,062 [INFO]   Checkpoint disimpan: 36620 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:15:47,064 [INFO] Progress: 36600/41580 selesai | 18922 dengan keypoints (51.7%)
+2026-09-16 05:16:47,415 [INFO]   Checkpoint disimpan: 36920 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:16:47,417 [INFO] Progress: 36900/41580 selesai | 19077 dengan keypoints (51.7%)
+2026-09-16 05:17:44,609 [INFO]   Checkpoint disimpan: 37220 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:17:44,611 [INFO] Progress: 37200/41580 selesai | 19237 dengan keypoints (51.7%)
+2026-09-16 05:18:42,931 [INFO]   Checkpoint disimpan: 37520 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:18:42,933 [INFO] Progress: 37500/41580 selesai | 19390 dengan keypoints (51.7%)
+2026-09-16 05:19:55,457 [INFO]   Checkpoint disimpan: 37820 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:19:55,460 [INFO] Progress: 37800/41580 selesai | 19545 dengan keypoints (51.7%)
+2026-09-16 05:21:03,419 [INFO]   Checkpoint disimpan: 38120 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:21:03,422 [INFO] Progress: 38100/41580 selesai | 19692 dengan keypoints (51.7%)
+2026-09-16 05:22:01,292 [INFO]   Checkpoint disimpan: 38420 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:22:01,295 [INFO] Progress: 38400/41580 selesai | 19868 dengan keypoints (51.7%)
+2026-09-16 05:23:01,685 [INFO]   Checkpoint disimpan: 38720 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:23:01,687 [INFO] Progress: 38700/41580 selesai | 20031 dengan keypoints (51.8%)
+2026-09-16 05:24:12,094 [INFO]   Checkpoint disimpan: 39020 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:24:12,095 [INFO] Progress: 39000/41580 selesai | 20190 dengan keypoints (51.8%)
+2026-09-16 05:25:18,737 [INFO]   Checkpoint disimpan: 39320 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:25:18,740 [INFO] Progress: 39300/41580 selesai | 20345 dengan keypoints (51.8%)
+2026-09-16 05:26:25,545 [INFO]   Checkpoint disimpan: 39620 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:26:25,548 [INFO] Progress: 39600/41580 selesai | 20508 dengan keypoints (51.8%)
+2026-09-16 05:27:34,841 [INFO]   Checkpoint disimpan: 39920 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:27:34,843 [INFO] Progress: 39900/41580 selesai | 20660 dengan keypoints (51.8%)
+2026-09-16 05:28:42,669 [INFO]   Checkpoint disimpan: 40220 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:28:42,671 [INFO] Progress: 40200/41580 selesai | 20829 dengan keypoints (51.8%)
+2026-09-16 05:29:44,210 [INFO]   Checkpoint disimpan: 40520 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:29:44,212 [INFO] Progress: 40500/41580 selesai | 20985 dengan keypoints (51.8%)
+2026-09-16 05:30:51,836 [INFO]   Checkpoint disimpan: 40820 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:30:51,838 [INFO] Progress: 40800/41580 selesai | 21132 dengan keypoints (51.8%)
+2026-09-16 05:32:08,793 [INFO]   Checkpoint disimpan: 41120 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:32:08,796 [INFO] Progress: 41100/41580 selesai | 21285 dengan keypoints (51.8%)
+2026-09-16 05:33:21,189 [INFO]   Checkpoint disimpan: 41420 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:33:21,192 [INFO] Progress: 41400/41580 selesai | 21452 dengan keypoints (51.8%)
+2026-09-16 05:33:56,515 [INFO]   Checkpoint disimpan: 41600 baris -> keypoints_checkpoint.parquet
+2026-09-16 05:33:56,552 [INFO] 
+=== HASIL SCRAPING ===
+2026-09-16 05:33:56,552 [INFO] Total diproses : 41600
+2026-09-16 05:33:56,555 [INFO]   ok                  : 21543 (51.8%)
+2026-09-16 05:33:56,555 [INFO]   no_keypoints        : 20031 (48.2%)
+2026-09-16 05:33:56,555 [INFO]   error_max_retry     : 26 (0.1%)
+2026-09-16 05:33:56,561 [INFO] 
+Artikel DENGAN keypoints: 21543
+2026-09-16 05:33:56,562 [INFO] Rata-rata jumlah keypoints: 2.9
+2026-09-16 05:33:56,562 [INFO] Sample keypoints:
+2026-09-16 05:33:56,563 [INFO]   [opec-raises-2022-oil-demand-growth-forecast.html]
+2026-09-16 05:33:56,563 [INFO]     • The Organization of the Petroleum Exporting Countries and allies led by Russia, a group known as OPE
+2026-09-16 05:33:56,563 [INFO]     • OPEC+ expects global oil demand to grow by 5.95 million bpd in 2021 after a record drop of about 9 m
+2026-09-16 05:33:56,563 [INFO]   [opec-seen-sticking-to-policy-despite-higher-oil-de]
+2026-09-16 05:33:56,563 [INFO]     • OPEC and its allies will likely stick to their existing policy of gradual oil output increases, four
+2026-09-16 05:33:56,563 [INFO]     • The group revised up its 2022 demand outlook and still faces U.S. pressure to raise production more 
+2026-09-16 05:33:56,563 [INFO]   [as-stimulus-checks-end-job-growth-to-power-economy]
+2026-09-16 05:33:56,563 [INFO]     • The higher wages employers have had to pay to stay competitive in a tight labor market could lead to
+2026-09-16 05:33:56,564 [INFO]     • As government stimulus payments run out, consumer spending will be relying on the labor market and j
+2026-09-16 05:33:56,745 [INFO] 
+Output disimpan: D:\UGM\smt_5\NLP\geopolitic-sentiment-analysis\data\raw\cnbc_keypoints.csv
