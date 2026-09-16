@@ -1,4 +1,4 @@
-﻿"""
+"""
 =====================================================================
 temporal_alignment.py  -  Penyelarasan Berita dengan Kurs Harian BI
 =====================================================================
@@ -43,7 +43,7 @@ log = logging.getLogger(__name__)
 
 ROOT_DIR    = Path(__file__).parent.parent
 CLEANED_DIR = ROOT_DIR / "data" / "cleaned"
-NEWS_FILE   = CLEANED_DIR / "news_geopolitik_clean.csv"
+NEWS_FILE   = CLEANED_DIR / "news_geopolitik_final.csv"
 KURS_FILE   = CLEANED_DIR / "bi_jisdor_2021_2026.csv"
 OUTPUT_FILE = CLEANED_DIR / "aligned_news_kurs.csv"
 
@@ -183,10 +183,10 @@ def run_alignment(df_news: pd.DataFrame, df_kurs: pd.DataFrame) -> pd.DataFrame:
         log.info("  %s: %d", direction, count)
 
     # Urutkan kolom
-    cols = ["date", "aligned_date", "title", "source_type", "url",
+    cols = ["date", "aligned_date", "year", "month", "keyword_category", "title", "keypoints", "source_type", "url", "status",
             "kurs_idr_per_usd", "kurs_change", "kurs_change_pct", "kurs_direction"]
     if "source" in df.columns:
-        cols.insert(4, "source")
+        cols.insert(7, "source")
     df = df[[c for c in cols if c in df.columns]].sort_values("date").reset_index(drop=True)
 
     return df
