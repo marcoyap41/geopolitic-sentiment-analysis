@@ -1,0 +1,13 @@
+pandas
+numpy
+scipy
+scikit-learn
+xgboost
+statsmodels
+nltk
+vaderSentiment
+pysentiment2
+matplotlib
+nbformat
+nbclient
+ipykernel

@@ -1,0 +1,22 @@
+digraph P {
+  rankdir=TB; nodesep=0.5; ranksep=0.32; fontname="Helvetica";
+  node [shape=box, style="rounded,filled", fillcolor="#f4f6f8", color="#5b6770", fontname="Helvetica", fontsize=12, margin="0.18,0.10", width=6.4];
+  edge [color="#5b6770", arrowsize=0.8];
+
+  s1 [label=<<B>1. Data (hasil Tugas 1)</B><BR/>Berita CNBC: judul + keypoints (41.406 artikel, terfilter geopolitik/makro)<BR/>Kurs JISDOR BI IDR/USD harian (1.201 hari target)>];
+  s2 [label=<<B>2. Formulasi target dan split</B>  <I>(src/split.py)</I><BR/>y_T = 1 jika kurs_T &gt; kurs_(T-1), selain itu 0<BR/>Berita terbit tanggal d dipasangkan ke T = hari kerja pertama setelah d<BR/>Split kronologis 60/20/20: train 720 | val 240 | test 241 hari>];
+  s3 [label=<<B>3. Preprocessing teks</B>  <I>(src/preprocessing.py)</I><BR/>Varian teks: judul saja | judul + keypoints<BR/>Versi ringan (untuk lexicon) dan versi bersih: lowercase, stopword, lemmatize (untuk TF-IDF/BoW)>];
+  s4 [label=<<B>4. Ekstraksi fitur</B>  <I>(src/features.py, src/dataset.py)</I><BR/>Lexicon per artikel: VADER + Loughran-McDonald  →  agregasi harian + lag-1 / rolling-3<BR/>1 dokumen per hari → TF-IDF / BoW (1-2 gram) → SVD 50 dimensi<BR/>Fitur kurs: lag return 1-5, rolling mean/std, hari dalam minggu>];
+  s5 [label=<<B>5. Pemodelan</B>  <I>(src/baseline.py, src/combined_model.py)</I><BR/>Baseline: majority, persistence, ARIMA, LogReg/XGBoost fitur kurs<BR/>Model gabungan: LogReg L2 / XGBoost dangkal pada kurs + NLP (ablation 8 set fitur)>];
+  s6 [label=<<B>6. Evaluasi</B>  <I>(src/evaluate.py, src/run_experiments.py)</I><BR/>Tuning: TimeSeriesSplit di dalam train; validasi = model train-only; test = refit train+val, dipakai sekali<BR/>Directional Accuracy, F1 macro, MCC, AUC; uji binomial vs majority, bootstrap CI, McNemar>];
+
+  s1 -> s2 -> s3 -> s4 -> s5 -> s6;
+
+  g1 [label="Guard anti-leakage:\nberita hanya dari tanggal < T", shape=box, style="rounded,filled", fillcolor="#fde9e7", color="#c0392b", fontsize=10.5, width=2.6];
+  g2 [label="Guard anti-leakage:\nTF-IDF/BoW/SVD di-fit hanya di train;\nfitur kurs hanya data <= T-1", shape=box, style="rounded,filled", fillcolor="#fde9e7", color="#c0392b", fontsize=10.5, width=2.6];
+  g3 [label="Guard anti-leakage:\ntest dipakai sekali;\nsplit tanpa shuffle", shape=box, style="rounded,filled", fillcolor="#fde9e7", color="#c0392b", fontsize=10.5, width=2.6];
+  {rank=same; s2; g1} {rank=same; s4; g2} {rank=same; s6; g3}
+  g1 -> s2 [dir=none, style=dashed, color="#c0392b"];
+  g2 -> s4 [dir=none, style=dashed, color="#c0392b"];
+  g3 -> s6 [dir=none, style=dashed, color="#c0392b"];
+}

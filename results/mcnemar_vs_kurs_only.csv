@@ -1,0 +1,17 @@
+model,vs,p_mcnemar
+logreg:kurs+volcat,logreg:kurs,0.37415171240479483
+logreg:kurs+lex_title,logreg:kurs,1.0
+logreg:kurs+lex_title_kp,logreg:kurs,1.0
+logreg:kurs+tfidf_title,logreg:kurs,0.1539127693264563
+logreg:kurs+tfidf_title_kp,logreg:kurs,0.5
+logreg:kurs+bow_title,logreg:kurs,1.0
+logreg:kurs+lex+tfidf,logreg:kurs,0.019690184799846844
+logreg:nlp_only(lex_title),logreg:kurs,0.375
+xgb:kurs+volcat,xgb:kurs,0.8854334972865135
+xgb:kurs+lex_title,xgb:kurs,0.6487911623106449
+xgb:kurs+lex_title_kp,xgb:kurs,0.7035366713552733
+xgb:kurs+tfidf_title,xgb:kurs,0.44996253629022254
+xgb:kurs+tfidf_title_kp,xgb:kurs,0.23704711476271959
+xgb:kurs+bow_title,xgb:kurs,0.3018724904870079
+xgb:kurs+lex+tfidf,xgb:kurs,0.5296020954762447
+xgb:nlp_only(lex_title),xgb:kurs,1.0
