@@ -8,6 +8,4 @@ nltk
 vaderSentiment
 pysentiment2
 matplotlib
-nbformat
-nbclient
 ipykernel
