@@ -29,6 +29,7 @@ def load_dataset():
         "kurs": [c for c in df.columns if c.startswith("k_")],            # fitur kurs saja
         "lexicon": [c for c in df.columns if c.startswith("t_")],         # VADER + Loughran-McDonald (judul)
         "tfidf": [c for c in df.columns if c.startswith("tfidf_t_")],     # TF-IDF (judul) -> SVD
+        "category": [c for c in df.columns if c.startswith("cat_")],      # proporsi kategori kata kunci
     }
     return df, feature_sets
 

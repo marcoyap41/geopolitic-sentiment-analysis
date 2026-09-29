@@ -3,7 +3,8 @@ Ekstraksi fitur NLP (tanpa pre-trained embedding / transformer).
 
   1. Lexicon per artikel : VADER (compound, pos, neg) + Loughran-McDonald
      (negative, positive, uncertainty, litigious; dinormalisasi jumlah token).
-  2. Agregasi harian     : rata-rata skor dan proporsi artikel negatif/positif per hari.
+  2. Agregasi harian     : rata-rata + min + max skor, proporsi artikel negatif/positif,
+     dan proporsi artikel per kategori kata kunci (dari Tugas 1) per hari.
   3. TF-IDF              : 1 dokumen per hari target -> TruncatedSVD (50 dimensi).
      Vocabulary, IDF, dan SVD di-FIT HANYA pada hari train (anti-leakage).
 Teks yang dipakai untuk model: judul ("t"). Varian judul+keypoints ("tk") hanya dihitung
@@ -19,11 +20,12 @@ from sklearn.decomposition import TruncatedSVD
 from sklearn.feature_extraction.text import TfidfVectorizer
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
-from config import (ARTICLE_FEATURES, ARTICLES_PREPROCESSED, DAILY_BASE,
-                    FEATURES_DAILY, SEED)
+from config import ARTICLE_FEATURES, DAILY_BASE, FEATURES_DAILY, SEED, SPLITS
 
 VARIANTS = {"t": "title", "tk": "title_kp"}      # kode singkat -> nama varian teks
 LM_CATS = ["Negative", "Positive", "Uncertainty", "Litigious"]
+KEYWORD_CATS = ["currency", "central_bank", "conflict", "diplomacy",
+               "energy", "macro", "dedollar", "us_politics"]   # dari Tugas 1 (kolom keyword_category)
 _TOKEN = re.compile(r"[a-z]+")
 
 
@@ -54,7 +56,7 @@ def article_lexicon_features(df: pd.DataFrame) -> pd.DataFrame:
 
 # ------------------------------------------------------------- agregasi harian
 def aggregate_daily(arts: pd.DataFrame, feats: pd.DataFrame) -> pd.DataFrame:
-    """Gabungkan skor artikel menjadi satu baris per hari target (rata-rata / proporsi,
+    """Gabungkan skor artikel menjadi satu baris per hari target (rata-rata/min/max/proporsi,
     supaya hari dengan banyak artikel tidak mendistorsi fitur)."""
     df = pd.concat([arts[["target_date"]], feats], axis=1)
     g = df.groupby("target_date")
@@ -62,12 +64,26 @@ def aggregate_daily(arts: pd.DataFrame, feats: pd.DataFrame) -> pd.DataFrame:
     for code in VARIANTS:
         comp = f"{code}_vader_compound"
         daily[f"{code}_compound_mean"] = g[comp].mean()
+        daily[f"{code}_compound_min"] = g[comp].min()   # artikel paling negatif hari itu
+        daily[f"{code}_compound_max"] = g[comp].max()   # artikel paling positif hari itu
         daily[f"{code}_share_neg"] = g[comp].apply(lambda s: (s < -0.05).mean())
         daily[f"{code}_share_pos"] = g[comp].apply(lambda s: (s > 0.05).mean())
         for c in LM_CATS:
             daily[f"{code}_lm_{c.lower()}_mean"] = g[f"{code}_lm_{c.lower()}"].mean()
     daily.index.name = "date"
     return daily
+
+
+def category_features_daily(arts: pd.DataFrame) -> pd.DataFrame:
+    """Proporsi artikel per hari yang termasuk tiap kategori kata kunci (dari Tugas 1).
+    Satu artikel bisa masuk lebih dari satu kategori (nilai `keyword_category` dipisah '|'),
+    jadi proporsi antar kategori boleh jumlahnya lebih dari 1."""
+    cats = arts["keyword_category"].fillna("").str.split("|")
+    g = cats.groupby(arts["target_date"])
+    out = pd.DataFrame({f"cat_{c}": g.apply(lambda s, c=c: s.map(lambda lst: c in lst).mean())
+                        for c in KEYWORD_CATS})
+    out.index.name = "date"
+    return out
 
 
 # ------------------------------------------------------------ vektor -> SVD
@@ -89,7 +105,9 @@ def vectorize_svd(docs: pd.Series, is_train: pd.Series, n_components=50, max_fea
 
 
 def main():
-    arts = pd.read_csv(ARTICLES_PREPROCESSED, encoding="utf-8-sig", low_memory=False)
+    # articles_preprocessed.csv tidak di-commit (besar); data yang sama tersedia per split di data/splits/
+    arts = pd.concat([pd.read_csv(SPLITS / f"{s}_articles.csv", encoding="utf-8-sig", low_memory=False)
+                      for s in ("train", "val", "test")], ignore_index=True)
     arts["target_date"] = pd.to_datetime(arts["target_date"])
     base = pd.read_csv(DAILY_BASE, parse_dates=["date"]).set_index("date")
 
@@ -99,6 +117,9 @@ def main():
 
     print("Agregasi harian ...")
     daily = aggregate_daily(arts, feats)
+
+    print("Komposisi kategori kata kunci ...")
+    daily = pd.concat([daily, category_features_daily(arts)], axis=1)
 
     print("TF-IDF + SVD (fit hanya di train) ...")
     is_train_day = base["split"].reindex(daily.index).eq("train")

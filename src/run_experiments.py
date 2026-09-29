@@ -20,10 +20,11 @@ RES = ROOT / "results"
 
 # nama eksperimen -> set fitur yang dipakai
 XGB_EXPERIMENTS = {
-    "xgb:kurs":              ["kurs"],                        # baseline
-    "xgb:kurs+lexicon":      ["kurs", "lexicon"],             # model gabungan
-    "xgb:kurs+tfidf":        ["kurs", "tfidf"],
-    "xgb:kurs+lexicon+tfidf": ["kurs", "lexicon", "tfidf"],
+    "xgb:kurs":                       ["kurs"],                                  # baseline
+    "xgb:kurs+lexicon":                ["kurs", "lexicon"],                       # model gabungan
+    "xgb:kurs+tfidf":                  ["kurs", "tfidf"],
+    "xgb:kurs+category":               ["kurs", "category"],
+    "xgb:kurs+lexicon+tfidf+category": ["kurs", "lexicon", "tfidf", "category"],  # semua fitur NLP
 }
 
 
