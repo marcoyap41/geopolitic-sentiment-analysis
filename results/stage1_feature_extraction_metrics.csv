@@ -1,0 +1,35 @@
+model,category,split,n,n_features,DA,F1_macro,share_pred1,note,p_mcnemar_vs_kurs,p_mcnemar_vs_lexicon
+majority,Model A: Time-Series Baseline,val,240,1,0.5125,0.33884297520661155,1.0,,,
+majority,Model A: Time-Series Baseline,test,241,1,0.5726141078838174,0.3641160949868074,1.0,,0.11116111910399346,0.3817327947933377
+persistence,Model A: Time-Series Baseline,val,240,1,0.5416666666666666,0.5413800291849072,0.5125,,,
+persistence,Model A: Time-Series Baseline,test,241,1,0.5311203319502075,0.520419124768865,0.5767634854771784,,0.8495501873144536,0.923401037594597
+arima,Model A: Time-Series Baseline,val,240,1,0.5416666666666666,0.5370370370370371,0.5875,,,
+arima,Model A: Time-Series Baseline,test,241,1,0.5435684647302904,0.5184902644580064,0.6556016597510373,,0.6137344676301392,1.0
+xgb:kurs,Model A: Time-Series Baseline,val,240,7,0.525,0.45868945868945865,0.8375,"{""max_depth"": 2, ""n_estimators"": 100}",,
+xgb:kurs,Model A: Time-Series Baseline,test,241,7,0.5186721991701245,0.45737577639751553,0.7634854771784232,"{""max_depth"": 2, ""n_estimators"": 100}",1.0,0.5966417603730826
+xgb:kurs+lexicon,Model B: NLP Dasar (Tugas 2),val,240,14,0.575,0.5379039565086077,0.7708333333333334,"{""max_depth"": 2, ""n_estimators"": 100}",,
+xgb:kurs+lexicon,Model B: NLP Dasar (Tugas 2),test,241,14,0.5394190871369294,0.49147419446820645,0.7344398340248963,"{""max_depth"": 2, ""n_estimators"": 100}",0.5966417603730826,1.0
+xgb:kurs+tfidf,Model B: NLP Dasar (Tugas 2),val,240,57,0.5291666666666667,0.49888209316506216,0.7333333333333333,"{""max_depth"": 2, ""n_estimators"": 300}",,
+xgb:kurs+tfidf,Model B: NLP Dasar (Tugas 2),test,241,57,0.5020746887966805,0.4787310742609949,0.6390041493775933,"{""max_depth"": 2, ""n_estimators"": 300}",0.7202027723528612,0.3856694201192796
+xgb:kurs+lexicon+tfidf,Model B: NLP Dasar (Tugas 2),val,240,64,0.5708333333333333,0.5591932809072915,0.65,"{""max_depth"": 2, ""n_estimators"": 300}",,
+xgb:kurs+lexicon+tfidf,Model B: NLP Dasar (Tugas 2),test,241,64,0.4854771784232365,0.47164073550212166,0.5892116182572614,"{""max_depth"": 2, ""n_estimators"": 300}",0.4159851975073046,0.1480321806927584
+xgb:kurs+fasttext (pca32_val_best),Kategori A: Static (FastText),val,240,39,0.5916666666666667,0.5851851851851853,0.6125,"dim=pca32, hp={""max_depth"": 3, ""n_estimators"": 300}",,
+xgb:kurs+fasttext (pca32_val_best),Kategori A: Static (FastText),test,241,39,0.5062240663900415,0.473596299627393,0.6763485477178424,"dim=pca32, hp={""max_depth"": 3, ""n_estimators"": 300}",0.8198929037490488,0.45574127943791237
+xgb:kurs+fasttext (raw_100d),Kategori A: Static (FastText),val,240,107,0.5333333333333333,0.5171026156941649,0.6708333333333333,"dim=raw, hp={""max_depth"": 3, ""n_estimators"": 300}",,
+xgb:kurs+fasttext (raw_100d),Kategori A: Static (FastText),test,241,107,0.5269709543568465,0.4597687588485134,0.7800829875518672,"dim=raw, hp={""max_depth"": 3, ""n_estimators"": 300}",0.9087769252754927,0.830373009685754
+xgb:kurs+finbert_emb (raw_val_best),Kategori B: Domain (FinBERT Emb),val,240,775,0.5708333333333333,0.5521658001050743,0.6916666666666667,"dim=raw, hp={""max_depth"": 2, ""n_estimators"": 300}",,
+xgb:kurs+finbert_emb (raw_val_best),Kategori B: Domain (FinBERT Emb),test,241,775,0.5352697095435685,0.47932098765432096,0.7551867219917012,"dim=raw, hp={""max_depth"": 2, ""n_estimators"": 300}",0.7520332015985951,1.0
+xgb:kurs+finbert_emb (raw_768d),Kategori B: Domain (FinBERT Emb),val,240,775,0.5708333333333333,0.5521658001050743,0.6916666666666667,"dim=raw, hp={""max_depth"": 2, ""n_estimators"": 300}",,
+xgb:kurs+finbert_emb (raw_768d),Kategori B: Domain (FinBERT Emb),test,241,775,0.5352697095435685,0.47932098765432096,0.7551867219917012,"dim=raw, hp={""max_depth"": 2, ""n_estimators"": 300}",0.7520332015985951,1.0
+xgb:kurs+bge_small (raw_val_best),Kategori C: General (BGE-Small),val,240,391,0.5583333333333333,0.5429721184248347,0.6708333333333333,"dim=raw, hp={""max_depth"": 2, ""n_estimators"": 300}",,
+xgb:kurs+bge_small (raw_val_best),Kategori C: General (BGE-Small),test,241,391,0.5767634854771784,0.5258101851851852,0.7551867219917012,"dim=raw, hp={""max_depth"": 2, ""n_estimators"": 300}",0.16057841913397977,0.3965701581455168
+xgb:kurs+bge_small (raw_384d),Kategori C: General (BGE-Small),val,240,391,0.5583333333333333,0.5429721184248347,0.6708333333333333,"dim=raw, hp={""max_depth"": 2, ""n_estimators"": 300}",,
+xgb:kurs+bge_small (raw_384d),Kategori C: General (BGE-Small),test,241,391,0.5767634854771784,0.5258101851851852,0.7551867219917012,"dim=raw, hp={""max_depth"": 2, ""n_estimators"": 300}",0.16057841913397977,0.3965701581455168
+xgb:kurs+bge_large (raw_val_best),Kategori C: General (BGE-Large),val,240,1031,0.5333333333333333,0.475,0.8208333333333333,"dim=raw, hp={""max_depth"": 2, ""n_estimators"": 300}",,
+xgb:kurs+bge_large (raw_val_best),Kategori C: General (BGE-Large),test,241,1031,0.5643153526970954,0.5216174830330642,0.7261410788381742,"dim=raw, hp={""max_depth"": 2, ""n_estimators"": 300}",0.2836071084054854,0.6137344676301392
+xgb:kurs+bge_large (raw_1024d),Kategori C: General (BGE-Large),val,240,1031,0.5333333333333333,0.475,0.8208333333333333,"dim=raw, hp={""max_depth"": 2, ""n_estimators"": 300}",,
+xgb:kurs+bge_large (raw_1024d),Kategori C: General (BGE-Large),test,241,1031,0.5643153526970954,0.5216174830330642,0.7261410788381742,"dim=raw, hp={""max_depth"": 2, ""n_estimators"": 300}",0.2836071084054854,0.6137344676301392
+xgb:kurs+finbert_sent (6d),Kategori B: Domain (FinBERT Sent),val,240,13,0.5333333333333333,0.4716565767749037,0.8291666666666667,"{""max_depth"": 2, ""n_estimators"": 100}",,
+xgb:kurs+finbert_sent (6d),Kategori B: Domain (FinBERT Sent),test,241,13,0.4896265560165975,0.4299094178510299,0.7510373443983402,"{""max_depth"": 2, ""n_estimators"": 100}",0.3367836351899315,0.16864291143970336
+xgb:kurs+finbert_pca50+sent,Kategori B: Domain (FinBERT Emb+Sent),val,240,63,0.5458333333333333,0.5440522875816993,0.55,"dim=pca50+sent6, hp={""max_depth"": 2, ""n_estimators"": 300}",,
+xgb:kurs+finbert_pca50+sent,Kategori B: Domain (FinBERT Emb+Sent),test,241,63,0.48132780082987553,0.47613251021650294,0.5269709543568465,"dim=pca50+sent6, hp={""max_depth"": 2, ""n_estimators"": 300}",0.3965701581455168,0.16544051293398976

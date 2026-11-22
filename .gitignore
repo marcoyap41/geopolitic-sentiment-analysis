@@ -1,6 +1,8 @@
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+.env
 data/processed/articles_targeted.csv
 data/processed/articles_preprocessed.csv
 data/processed/article_features.csv
+data/processed/embeddings/
