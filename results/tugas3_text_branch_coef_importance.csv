@@ -1,0 +1,68 @@
+feature,modality_group,abs_logreg_coef
+vader_comp_ewma5,EWMA & News Shock,0.6693207895781413
+vader_comp_ewma3,EWMA & News Shock,0.6049997863928359
+topic_share_01,Topic Geopolitik,0.4609090639440682
+bge_raw_pca16_00,BGE Semantic,0.43842414841398436
+lm_uncert_ewma5,EWMA & News Shock,0.40445278810217417
+lm_uncert_ewma3,EWMA & News Shock,0.3464533741555399
+topic_share_07,Topic Geopolitik,0.34562515453648823
+bge_raw_pca16_02,BGE Semantic,0.3336737210708268
+topic_ent_ewma3,Topic Geopolitik,0.326662068441271
+fb_soft_share_neg,NER & FinBERT Sentimen,0.31162106317823896
+fb_soft_net_diff5,EWMA & News Shock,0.3108067923411395
+bge_ewma3_pca16_08,EWMA & News Shock,0.2808615020844214
+bge_cos_shift_5d,EWMA & News Shock,0.2756834058068099
+topic_ent_ewma5,Topic Geopolitik,0.27085790412905486
+fb_soft_net_ewma5,EWMA & News Shock,0.2548975746236889
+bge_ewma3_pca16_06,EWMA & News Shock,0.24072785288663226
+ner_share_t1_ewma3,EWMA & News Shock,0.23898402053926684
+fb_soft_neg_mean,NER & FinBERT Sentimen,0.22968030711639612
+fb_soft_net_mean,NER & FinBERT Sentimen,0.227678513166905
+ner_eff_n_ratio,NER & FinBERT Sentimen,0.2271383184298695
+topic_entropy,Topic Geopolitik,0.22323255084775648
+bge_raw_pca16_06,BGE Semantic,0.2044403194065685
+fb_soft_share_pos,NER & FinBERT Sentimen,0.1971607178754832
+bge_ewma3_pca16_02,EWMA & News Shock,0.17053016204747393
+bge_raw_pca16_03,BGE Semantic,0.1700498959331686
+fb_soft_pos_mean,NER & FinBERT Sentimen,0.16833981552936658
+bge_ewma3_pca16_09,EWMA & News Shock,0.15799053844000494
+bge_raw_pca16_05,BGE Semantic,0.15613376762210882
+bge_cos_shift_1d,EWMA & News Shock,0.1487199238750137
+topic_share_02,Topic Geopolitik,0.14427047569036097
+ner_share_t1_ewma5,EWMA & News Shock,0.1407831822440354
+bge_ewma3_pca16_01,EWMA & News Shock,0.1369554670652037
+fb_soft_net_ewma3,EWMA & News Shock,0.12429252966592344
+bge_ewma3_pca16_12,EWMA & News Shock,0.1229904246750838
+topic_share_05,Topic Geopolitik,0.12117921656547945
+topic_share_06,Topic Geopolitik,0.11856807442263123
+fb_soft_neu_mean,NER & FinBERT Sentimen,0.11172274841635475
+bge_raw_pca16_15,BGE Semantic,0.11051757865392885
+bge_raw_pca16_01,BGE Semantic,0.10867356163681696
+ner_share_tier1,NER & FinBERT Sentimen,0.10673680963807594
+topic_share_08,Topic Geopolitik,0.1036077368377793
+bge_raw_pca16_12,BGE Semantic,0.09581397883840732
+topic_share_09,Topic Geopolitik,0.09475873188786564
+bge_raw_pca16_11,BGE Semantic,0.09186580108485054
+bge_raw_pca16_13,BGE Semantic,0.08592879073998201
+bge_ewma3_pca16_05,EWMA & News Shock,0.08439613440317405
+bge_raw_pca16_08,BGE Semantic,0.08421434729605785
+bge_raw_pca16_10,BGE Semantic,0.08075584735465303
+topic_share_00,Topic Geopolitik,0.08014959960028799
+bge_raw_pca16_07,BGE Semantic,0.07150622272525252
+bge_ewma3_pca16_00,EWMA & News Shock,0.06634376356898011
+ner_share_tier2,NER & FinBERT Sentimen,0.06307306603226674
+ner_count_tier1_log,NER & FinBERT Sentimen,0.059935805519313816
+bge_raw_pca16_14,BGE Semantic,0.058984370515401924
+bge_ewma3_pca16_14,EWMA & News Shock,0.05192007319621966
+n_articles_z5,EWMA & News Shock,0.04930522664243982
+bge_ewma3_pca16_04,EWMA & News Shock,0.0486367816034677
+bge_ewma3_pca16_10,EWMA & News Shock,0.04782667612599257
+bge_ewma3_pca16_11,EWMA & News Shock,0.04660966337063591
+bge_ewma3_pca16_03,EWMA & News Shock,0.03569592567570705
+bge_ewma3_pca16_13,EWMA & News Shock,0.03116588698383396
+bge_ewma3_pca16_15,EWMA & News Shock,0.01266509227032287
+bge_raw_pca16_09,BGE Semantic,0.01072076984868432
+bge_ewma3_pca16_07,EWMA & News Shock,0.009843540144152684
+topic_share_03,Topic Geopolitik,0.00793278892864337
+topic_share_04,Topic Geopolitik,0.0031864295985917185
+bge_raw_pca16_04,BGE Semantic,0.0007163229242018108

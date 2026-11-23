@@ -1,0 +1,11 @@
+topic_id,top_keywords,train_articles,train_share,val_share,test_share
+0,"trump, biden, election, court, case, judge, house, senate",2855,0.12188353825136612,0.19726955233358026,0.16711590296495957
+1,"fed, rate, inflation, say, bank, hike, rate hike, interest",2946,0.1257684426229508,0.0949306804952905,0.07933903668112036
+2,"oil, price, oil price, supply, gas, opec, energy, rise",1477,0.06305498633879782,0.04614244893639539,0.08601898511660612
+3,"debt, say, deal, inflation, recession, cnbc, year, ceo",4041,0.17251536885245902,0.1739866652555826,0.15211531700457048
+4,"stock, stock market, market, thing, wall, wall street, street, open",3660,0.15625,0.18287649486718172,0.16067033868510489
+5,"yield, treasury yield, treasury, year treasury, year, yield rise, investor, yield fall",875,0.037354849726775954,0.031961054079796804,0.0339857025665065
+6,"dollar, yen, data, euro, fed, gain, rate, dollar gain",879,0.03752561475409836,0.04391999153349561,0.03656392827844838
+7,"biden, ukraine, russia, war, say, china, israel, deal",4195,0.17908982240437157,0.1250926023917875,0.15961560998476504
+8,"gold, inflation, dollar, fed, rate, data, rise, high",1289,0.05502903005464481,0.045930786326595405,0.06363529825383804
+9,"oil, fall, price, oil price, lower, china, demand, oil fall",1207,0.05152834699453552,0.05788972378029421,0.06093988046408063
